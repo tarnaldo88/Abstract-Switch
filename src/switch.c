@@ -49,3 +49,16 @@ bool switch_assign_port(Switch *sw, const char* name, int vlan_id) {
     }
     return false;
 }
+
+void switch_show(Switch *sw) {
+    printf("\n=== Ports ===\n");
+
+    for(int i = 0; i < sw->vlan_count; i++) {
+        printf("  VLAN %d\n", sw->vlans[i].id);
+    }
+
+    printf("\n=== Ports ===\n");
+    for (int i = 0; i < sw->port_count; i++) {
+        printf("  %s  -> VLAN %d\n", sw->ports[i].name, sw->ports[i].vlan_id);
+    }
+}
