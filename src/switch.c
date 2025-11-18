@@ -39,3 +39,13 @@ bool switch_add_port(Switch *sw, const char *name) {
 
     return true;
 }
+
+bool switch_assign_port(Switch *sw, const char* name, int vlan_id) {
+    for(int i = 0; i < sw->port_count; i ++) {
+        if(!strcmp(sw->ports[i].name, name)) {
+            sw->ports[i].vlan_id = vlan_id;
+            return sw->backend->assign_port_to_vlan(name, vlan_id);
+        }
+    }
+    return false;
+}
