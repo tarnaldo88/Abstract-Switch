@@ -29,3 +29,13 @@ bool switch_delete_vlan(Switch *sw, int vlan_id) {
     }
     return false;
 }
+
+bool switch_add_port(Switch *sw, const char *name) {
+    if(sw->port_count >= MAX_PORTS) return false;
+
+    strcpy(sw->ports[sw->port_count].name, name);
+    sw->ports[sw->port_count].vlan_id = -1;
+    sw->port_count++;
+
+    return true;
+}
