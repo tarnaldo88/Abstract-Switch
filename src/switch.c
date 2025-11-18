@@ -24,6 +24,7 @@ bool switch_delete_vlan(Switch *sw, int vlan_id) {
 
             sw->vlan_count--;
 
+            // return sw->backend->remove_vlan(vlan_id);
             return sw->backend->remove_vlan(vlan_id);
         }
     }
