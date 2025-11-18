@@ -1,0 +1,39 @@
+# Build Artifacts
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+*.out
+
+# Build directories
+/build/
+bin/
+tmp/
+
+# Makefile backups
+Makefile~
+*.mk~
+
+# Editor/IDE files
+*.swp
+*.swo
+*~
+.vscode/
+.vs/
+.idea/
+
+# Logs
+*.log
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# MSYS2 / MinGW temporary files
+*.stackdump
+
+# GDB debugging
+.gdb_history
+gmon.out
